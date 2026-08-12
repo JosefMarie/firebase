@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usage and billing - usafi-barista-web - Firebase Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="firebase-logo.svg" class="firebase-logo-icon" alt="Firebase Logo">
+        <span class="firebase-logo-text">Firebase</span>
+      </div>
+
+      <div class="sidebar-menu">
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <span>Search for products</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Project Overview</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+          <span>Settings</span>
+        </div>
+
+        <div class="sidebar-section-title">Project shortcuts</div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>
+          <span>Extensions</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+          <span>Storage</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H5V8h14v10z"/></svg>
+          <span>App Hosting</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          <span>Hosting</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          <span>Firestore</span>
+        </div>
+        <div class="sidebar-item">
+          <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
+          <span>Show all</span>
+        </div>
+
+        <div class="sidebar-section-title">Product categories</div>
+        <div class="sidebar-item">
+          <span>Databases & Storage</span>
+        </div>
+        <div class="sidebar-item">
+          <span>Security</span>
+        </div>
+        <div class="sidebar-item">
+          <span>AI services</span>
+        </div>
+        <div class="sidebar-item">
+          <span>Hosting & Serverless</span>
+        </div>
+        <div class="sidebar-item">
+          <span>DevOps & Engagement</span>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="blaze-badge-card">
+          <div class="blaze-info">
+            <span class="blaze-title">Blaze</span>
+            <span class="blaze-sub">Pay as you go</span>
+          </div>
+          <span class="modify-link">Modify</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="project-selector">
+            <span>usafi-barista-web</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+        </div>
+
+        <div class="topbar-right">
+          <button class="icon-btn" title="Notifications">
+            <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+          </button>
+          <button class="icon-btn" title="Gemini AI Assistance">
+            <svg viewBox="0 0 24 24"><path d="M12 2L9.19 8.63 2 12l7.19 3.37L12 22l2.81-6.63L22 12l-7.19-3.37z"/></svg>
+          </button>
+          <button class="icon-btn" title="Help & Documentation">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+          </button>
+          <div class="user-avatar" title="Account">U</div>
+        </div>
+      </header>
+
+      <!-- Main Screen Page Container -->
+      <div id="screen-content" class="page-container">
+        <!-- Page Title & Actions -->
+        <div class="page-title-row">
+          <h1 class="page-title">Usage and billing</h1>
+          <div class="action-buttons-group">
+            <button class="btn btn-outline" id="btn-open-drawer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              <span>⚡ Customize Usage & Rates</span>
+            </button>
+            <button class="btn btn-primary" id="btn-print-statement">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-4 11H9v-5h6v5zm4-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2-9H7v4h10V3z"/></svg>
+              <span>📄 Print Payment Invoice (PDF)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-header">
+          <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+          <button class="tab-btn" data-tab="tab-details">Details & settings</button>
+          <button class="tab-btn" data-tab="tab-subscriptions">Subscriptions</button>
+
+          <div class="date-selector-container">
+            <div class="custom-dropdown" id="month-dropdown-container">
+              <button class="custom-dropdown-btn" id="month-dropdown-btn">
+                <svg class="calendar-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                </svg>
+                <span id="selected-month-label">August 2026</span>
+                <svg class="dropdown-arrow" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </button>
+
+              <div class="custom-dropdown-menu" id="month-dropdown-menu">
+                <div class="dropdown-item active" data-value="2026-08">August 2026</div>
+                <div class="dropdown-item" data-value="2026-07">July 2026</div>
+                <div class="dropdown-item" data-value="2026-06">June 2026</div>
+                <div class="dropdown-item" data-value="2026-05">May 2026</div>
+                <div class="dropdown-item" data-value="2026-04">April 2026</div>
+                <div class="dropdown-item" data-value="2026-03">March 2026</div>
+                <div class="dropdown-item" data-value="2026-02">February 2026</div>
+                <div class="dropdown-item" data-value="2026-01">January 2026</div>
+                <div class="dropdown-item" data-value="2025-12">December 2025</div>
+                <div class="dropdown-item" data-value="2025-11">November 2025</div>
+                <div class="dropdown-item" data-value="2025-10">October 2025</div>
+                <div class="dropdown-item" data-value="2025-09">September 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 1: OVERVIEW -->
+        <div id="tab-overview" class="tab-content active">
+          <!-- Project Cost Banner -->
+          <div class="cost-summary-card-wrapper" id="cost-card-wrapper">
+            <!-- Delayed Callout Bubble -->
+            <div class="cost-delay-tooltip" id="cost-delay-tooltip">
+              <span>Cost data may be delayed up to 24 hours</span>
+            </div>
+
+            <div class="cost-summary-card" id="cost-summary-card">
+              <div class="cost-header-row" id="cost-header-row">
+                <div class="cost-left">
+                  <span class="cost-title">Project cost</span>
+                  <span class="badge-blaze">Blaze</span>
+                </div>
+                <div class="cost-right">
+                  <div class="cost-header-amount" id="cost-header-amount-box">
+                    <div class="cost-amount-label">Project cost</div>
+                    <div class="cost-amount-value" id="display-total-cost">$0.01</div>
+                  </div>
+                  <button class="expand-icon-btn" id="btn-toggle-cost-card" title="Toggle breakdown">
+                    <svg class="cost-chevron" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17 16.59 8.59 18 10l-6 6-6-6z"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Expanded Cumulative Line Graph Area -->
+              <div class="cost-expanded-area" id="cost-expanded-area">
+                <p class="cost-expanded-subtitle">
+                  Your project's complete billing information can be viewed in <a href="#" style="color: var(--accent-blue); text-decoration: none;">Google Cloud Console ↗</a>
+                </p>
+
+                <div class="cost-graph-layout">
+                  <!-- Cumulative Line Chart Area -->
+                  <div class="cost-chart-container">
+                    <div class="cost-grid-lines">
+                      <div class="grid-line"><span class="grid-y-tick" id="cost-y-max">$1.00</span></div>
+                      <div class="grid-line"><span class="grid-y-tick" id="cost-y-mid3">$0.80</span></div>
+                      <div class="grid-line"><span class="grid-y-tick" id="cost-y-mid2">$0.60</span></div>
+                      <div class="grid-line"><span class="grid-y-tick" id="cost-y-mid1">$0.40</span></div>
+                      <div class="grid-line"><span class="grid-y-tick" id="cost-y-low">$0.20</span></div>
+                      <div class="grid-line"><span class="grid-y-tick">$0.00</span></div>
+                    </div>
+
+                    <div class="cost-svg-wrapper">
+                      <!-- SVG Cumulative Line Chart -->
+                      <svg class="cost-svg-graph" id="cost-svg-graph" viewBox="0 0 600 180" preserveAspectRatio="none">
+                        <!-- Path dynamically rendered via JS -->
+                      </svg>
+                      <!-- Dynamic Floating Tooltip Card -->
+                      <div class="cost-hover-tooltip" id="cost-hover-tooltip">
+                        <div class="tooltip-date-head" id="cost-tt-date">Tuesday, August 4, 2026</div>
+                        <div class="tooltip-sub-head">Project cost (cumulative)</div>
+                        <div class="tooltip-service-line" id="cost-tt-service">Cloud Functions <span id="cost-tt-service-val">$0.00</span></div>
+                        <div class="tooltip-total-line">Cumulative project cost <span id="cost-tt-total-val">$0.00</span></div>
+                      </div>
+                    </div>
+
+                    <div class="cost-x-axis" id="cost-x-axis">
+                      <span>Aug 1</span>
+                      <span>Aug 4</span>
+                      <span>Aug 7</span>
+                      <span>Aug 10</span>
+                      <span>Aug 13</span>
+                      <span>Aug 16</span>
+                      <span>Aug 19</span>
+                      <span>Aug 22</span>
+                      <span>Aug 25</span>
+                      <span>Aug 28</span>
+                    </div>
+                  </div>
+
+                  <!-- Right Side Checklist Legend -->
+                  <div class="cost-legend-sidebar">
+                    <div class="legend-checkbox-item">
+                      <input type="checkbox" id="chk-functions" checked>
+                      <label for="chk-functions">Cloud Functions</label>
+                      <span class="legend-cost-val" id="legend-cost-functions">$0.00</span>
+                    </div>
+                    <div class="legend-checkbox-item">
+                      <input type="checkbox" id="chk-firestore" checked>
+                      <label for="chk-firestore">Cloud Firestore</label>
+                      <span class="legend-cost-val" id="legend-cost-firestore">$0.00</span>
+                    </div>
+                    <div class="legend-checkbox-item">
+                      <input type="checkbox" id="chk-hosting" checked>
+                      <label for="chk-hosting">Hosting</label>
+                      <span class="legend-cost-val" id="legend-cost-hosting">$0.01</span>
+                    </div>
+                    <div class="legend-checkbox-item">
+                      <input type="checkbox" id="chk-storage" checked>
+                      <label for="chk-storage">Cloud Storage</label>
+                      <span class="legend-cost-val" id="legend-cost-storage">$0.00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Right Total Display -->
+                <div class="cost-bottom-total-row">
+                  <div class="bottom-total-box">
+                    <div class="bottom-total-label">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                      <span>Project cost</span>
+                    </div>
+                    <div class="bottom-total-amount" id="cost-expanded-total">$0.01</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Usage Container Card -->
+          <div class="usage-container-card">
+            <div class="usage-card-header">
+              <h2 class="usage-card-title">Product Usage</h2>
+              <p class="usage-card-subtitle">Firebase offers a no-cost tier for paid infrastructure products. You'll be charged only for any usage that goes above these no-cost tier thresholds.</p>
+            </div>
+
+            <!-- Category 1: Cloud Storage -->
+            <div class="service-block">
+              <div class="service-header">
+                <div class="service-icon">
+                  <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/></svg>
+                </div>
+                <span>Cloud Storage</span>
+              </div>
+
+              <!-- Metric Row: Bytes Stored -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Bytes stored</span>
+                  <span class="info-tooltip" title="Total cloud storage data stored">?</span>
+                </div>
+                <div class="metric-text-desc" id="row-storage-bytes-desc">
+                  No-cost quotas are region dependent. Click for more details.
+                </div>
+              </div>
+
+              <!-- Metric Row: Bandwidth -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Bandwidth</span>
+                  <span class="info-tooltip" title="Cloud storage outbound bandwidth">?</span>
+                </div>
+                <div class="metric-text-desc" id="row-storage-bandwidth-desc">
+                  No-cost quotas are region dependent. Click for more details.
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Functions -->
+            <div class="service-block">
+              <div class="service-header">
+                <div class="service-icon">
+                  <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                </div>
+                <span>Functions</span>
+              </div>
+
+              <!-- Metric Row: Invocations -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Invocations</span>
+                </div>
+                <div class="metric-quota-col">
+                  <span class="metric-quota-bold" id="invocations-percent-text">0%</span> of no-cost quota used
+                  <div class="metric-quota-subtext">*Monthly no-cost quota across your billing account</div>
+                </div>
+                <div class="metric-progress-col">
+                  <span class="progress-val-current" id="invocations-val-text">118</span>
+                  <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="invocations-bar-fill" style="width: 0.01%;"></div>
+                  </div>
+                  <span class="progress-val-max">2M / month</span>
+                </div>
+                <div class="metric-cost-col" id="invocations-cost-text">$0.00</div>
+              </div>
+            </div>
+
+            <!-- Category 3: Cloud Firestore -->
+            <div class="service-block">
+              <div class="service-header">
+                <div class="service-icon">
+                  <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                </div>
+                <span>Cloud Firestore</span>
+                <select class="select-instance"><option>(default)</option></select>
+              </div>
+
+              <!-- Writes -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Writes</span>
+                </div>
+                <div class="metric-quota-col">
+                  <span class="metric-quota-bold" id="firestore-writes-percent">0.8%</span> of no-cost quota used
+                </div>
+                <div class="metric-progress-col">
+                  <span class="progress-val-current" id="firestore-writes-val">169</span>
+                  <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="firestore-writes-bar-fill" style="width: 0.8%;"></div>
+                  </div>
+                  <span class="progress-val-max">20K / day</span>
+                </div>
+                <div class="metric-cost-col" id="firestore-writes-cost">$0.00</div>
+              </div>
+
+              <!-- Reads -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Reads</span>
+                </div>
+                <div class="metric-quota-col">
+                  <span class="metric-quota-bold" id="firestore-reads-percent">9.6%</span> of no-cost quota used
+                </div>
+                <div class="metric-progress-col">
+                  <span class="progress-val-current" id="firestore-reads-val">4.8K</span>
+                  <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="firestore-reads-bar-fill" style="width: 9.6%;"></div>
+                  </div>
+                  <span class="progress-val-max">50K / day</span>
+                </div>
+                <div class="metric-cost-col" id="firestore-reads-cost">$0.00</div>
+              </div>
+
+              <!-- Deletes -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Deletes</span>
+                </div>
+                <div class="metric-quota-col">
+                  <span class="metric-quota-bold" id="firestore-deletes-percent">0%</span> of no-cost quota used
+                </div>
+                <div class="metric-progress-col">
+                  <span class="progress-val-current" id="firestore-deletes-val">0</span>
+                  <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="firestore-deletes-bar-fill" style="width: 0%;"></div>
+                  </div>
+                  <span class="progress-val-max">20K / day</span>
+                </div>
+                <div class="metric-cost-col" id="firestore-deletes-cost">$0.00</div>
+              </div>
+
+              <div class="metric-sub-footer">
+                Additional usage billed for month: Bytes stored over 1 GB , Bandwidth over 10 GB
+              </div>
+            </div>
+
+            <!-- Category 4: Hosting -->
+            <div class="service-block">
+              <div class="service-header">
+                <div class="service-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </div>
+                <span>Hosting</span>
+              </div>
+
+              <!-- Storage -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Storage</span>
+                </div>
+                <div class="metric-quota-col">
+                  <span class="metric-quota-bold" id="hosting-storage-percent">61.8%</span> of no-cost quota used
+                </div>
+                <div class="metric-progress-col">
+                  <span class="progress-val-current" id="hosting-storage-val">6.2 GB</span>
+                  <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="hosting-storage-bar-fill" style="width: 61.8%;"></div>
+                  </div>
+                  <span class="progress-val-max">10 GB total</span>
+                </div>
+                <div class="metric-cost-col" id="hosting-storage-cost">$0.00</div>
+              </div>
+
+              <!-- Downloads -->
+              <div class="metric-row">
+                <div class="metric-name-col">
+                  <span>Downloads</span>
+                </div>
+                <div class="metric-quota-col">
+                  <span class="metric-quota-bold" id="hosting-downloads-percent">2.6%</span> of no-cost quota used
+                </div>
+                <div class="metric-progress-col">
+                  <span class="progress-val-current" id="hosting-downloads-val">9.2 MB</span>
+                  <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="hosting-downloads-bar-fill" style="width: 2.6%;"></div>
+                  </div>
+                  <span class="progress-val-max">360 MB / day</span>
+                </div>
+                <div class="metric-cost-col" id="hosting-downloads-cost">$0.01</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 2: DETAILS & SETTINGS -->
+        <div id="tab-details" class="tab-content">
+          <div class="details-grid">
+            <div class="details-column">
+              <!-- Billing Account Card -->
+              <div class="details-card">
+                <div class="details-card-title">
+                  <span>Billing account</span>
+                  <span class="console-badge">
+                    <span>Managed in Google Cloud Console</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                  </span>
+                </div>
+                <p class="details-card-desc">Your billing account is the payment profile for your project. A billing account can be linked to multiple projects.</p>
+
+                <div class="detail-field">
+                  <div class="detail-label">Billing account name</div>
+                  <div class="detail-value" id="billing-account-name">Firebase Payment</div>
+                </div>
+                <div class="detail-field">
+                  <div class="detail-label">Billing account ID</div>
+                  <div class="detail-value" id="billing-account-id">01AFA5-71AD90-715FEO</div>
+                </div>
+                <div class="detail-field">
+                  <div class="detail-label">Billing account currency</div>
+                  <div class="detail-value">USD</div>
+                </div>
+
+                <button class="btn btn-secondary" style="margin-top: 12px;">View account ↗</button>
+              </div>
+
+              <!-- Budgets & Alerts Card -->
+              <div class="details-card">
+                <div class="details-card-title">
+                  <span>Budgets & alerts</span>
+                  <span class="console-badge">
+                    <span>Managed in Google Cloud Console</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+                  </span>
+                </div>
+                <p class="details-card-desc">Avoid surprises on your bill by creating budgets to monitor all your Google Cloud charges in one place. After you've set a budget, you can create budget alerts to email billing admins and users when charges exceed a certain amount. <a href="#" style="color:var(--accent-blue);">Learn more ↗</a></p>
+
+                <div class="detail-field">
+                  <div class="detail-label">Budgets</div>
+                  <div class="detail-value">1 budget for this project</div>
+                </div>
+
+                <button class="btn btn-secondary" style="margin-top: 12px;">View budgets ↗</button>
+              </div>
+            </div>
+
+            <div class="details-column">
+              <!-- Right Side: Firebase Pricing Plan -->
+              <div class="details-card">
+                <div class="details-card-title">Firebase pricing plan</div>
+                <div style="margin-top: 16px; margin-bottom: 20px;">
+                  <h3 style="font-size: 20px; font-weight: 500; color: #fff;">Blaze</h3>
+                  <p style="font-size: 13px; color: var(--text-muted);">Pay as you go</p>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                  <button class="btn btn-primary">Modify plan</button>
+                  <button class="btn btn-outline">See all plans ↗</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: SUBSCRIPTIONS -->
+        <div id="tab-subscriptions" class="tab-content">
+          <div class="subscription-card">
+            <h3 style="font-size: 16px; font-weight: 500; color: var(--text-light); margin-bottom: 8px;">Services you have</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">The billing account used for services may differ from the billing account associated with this project.</p>
+
+            <div class="detail-label">User services <span style="cursor:pointer;" title="Info">?</span></div>
+            <div class="service-item-row">
+              <span class="gemini-sparkle-icon">✦</span>
+              <span>Gemini in Firebase</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Dynamic Configuration Controls Drawer Modal -->
+  <div class="modal-overlay" id="drawer-modal">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3 class="drawer-title">⚡ Dynamic Pricing & Usage Simulator</h3>
+        <button class="close-btn" id="drawer-close-btn">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="presets-group">
+          <div class="presets-label">Quick Presets</div>
+          <div class="preset-btns-row">
+            <button class="preset-chip active" data-preset="baseline">Current Screenshot ($0.01)</button>
+            <button class="preset-chip" data-preset="moderate">Moderate Apps ($14.80)</button>
+            <button class="preset-chip" data-preset="high">High Traffic ($87.50)</button>
+            <button class="preset-chip" data-preset="heavy">Enterprise Heavy ($340.20)</button>
+          </div>
+        </div>
+
+        <!-- Functions Section -->
+        <div class="config-section-title">Cloud Functions</div>
+        <div class="config-control-card">
+          <div class="control-label-row">
+            <span class="control-name">Invocations</span>
+            <span class="control-val-badge" id="slider-invocations-val">118</span>
+          </div>
+          <input type="range" min="0" max="10000000" step="1000" value="118" class="range-slider" id="input-invocations">
+          <div class="rate-inputs-row">
+            <span style="font-size: 11px; color: var(--text-muted);">Rate above 2M free tier:</span>
+            <input type="number" step="0.01" value="0.40" class="rate-input-box" id="rate-invocations" title="$ per 1 Million invocations">
+            <span style="font-size: 11px; color: var(--text-muted);">$ / 1M</span>
+          </div>
+        </div>
+
+        <!-- Firestore Section -->
+        <div class="config-section-title">Cloud Firestore</div>
+        <div class="config-control-card">
+          <div class="control-label-row">
+            <span class="control-name">Writes / day</span>
+            <span class="control-val-badge" id="slider-writes-val">169</span>
+          </div>
+          <input type="range" min="0" max="500000" step="100" value="169" class="range-slider" id="input-writes">
+          <div class="rate-inputs-row">
+            <span style="font-size: 11px; color: var(--text-muted);">Rate above 20K free:</span>
+            <input type="number" step="0.01" value="0.18" class="rate-input-box" id="rate-writes" title="$ per 100K writes">
+            <span style="font-size: 11px; color: var(--text-muted);">$ / 100K</span>
+          </div>
+        </div>
+
+        <div class="config-control-card">
+          <div class="control-label-row">
+            <span class="control-name">Reads / day</span>
+            <span class="control-val-badge" id="slider-reads-val">4800</span>
+          </div>
+          <input type="range" min="0" max="1000000" step="500" value="4800" class="range-slider" id="input-reads">
+          <div class="rate-inputs-row">
+            <span style="font-size: 11px; color: var(--text-muted);">Rate above 50K free:</span>
+            <input type="number" step="0.01" value="0.06" class="rate-input-box" id="rate-reads" title="$ per 100K reads">
+            <span style="font-size: 11px; color: var(--text-muted);">$ / 100K</span>
+          </div>
+        </div>
+
+        <div class="config-control-card">
+          <div class="control-label-row">
+            <span class="control-name">Deletes / day</span>
+            <span class="control-val-badge" id="slider-deletes-val">0</span>
+          </div>
+          <input type="range" min="0" max="300000" step="100" value="0" class="range-slider" id="input-deletes">
+          <div class="rate-inputs-row">
+            <span style="font-size: 11px; color: var(--text-muted);">Rate above 20K free:</span>
+            <input type="number" step="0.01" value="0.02" class="rate-input-box" id="rate-deletes" title="$ per 100K deletes">
+            <span style="font-size: 11px; color: var(--text-muted);">$ / 100K</span>
+          </div>
+        </div>
+
+        <!-- Hosting Section -->
+        <div class="config-section-title">Hosting</div>
+        <div class="config-control-card">
+          <div class="control-label-row">
+            <span class="control-name">Hosting Storage</span>
+            <span class="control-val-badge" id="slider-hosting-storage-val">6.2 GB</span>
+          </div>
+          <input type="range" min="0" max="100" step="0.5" value="6.2" class="range-slider" id="input-hosting-storage">
+          <div class="rate-inputs-row">
+            <span style="font-size: 11px; color: var(--text-muted);">Rate above 10 GB free:</span>
+            <input type="number" step="0.001" value="0.026" class="rate-input-box" id="rate-hosting-storage">
+            <span style="font-size: 11px; color: var(--text-muted);">$ / GB</span>
+          </div>
+        </div>
+
+        <div class="config-control-card">
+          <div class="control-label-row">
+            <span class="control-name">Hosting Downloads / day</span>
+            <span class="control-val-badge" id="slider-hosting-downloads-val">9.2 MB</span>
+          </div>
+          <input type="range" min="0" max="5000" step="1" value="9.2" class="range-slider" id="input-hosting-downloads">
+          <div class="rate-inputs-row">
+            <span style="font-size: 11px; color: var(--text-muted);">Rate above 360 MB/day:</span>
+            <input type="number" step="0.01" value="0.15" class="rate-input-box" id="rate-hosting-downloads">
+            <span style="font-size: 11px; color: var(--text-muted);">$ / GB</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="drawer-footer">
+        <button class="btn btn-outline" id="drawer-reset-btn">Reset Defaults</button>
+        <button class="btn btn-primary" id="drawer-apply-btn">Apply & Update UI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Printable Invoice Preview Modal -->
+  <div class="invoice-modal-overlay" id="invoice-modal">
+    <div class="invoice-modal-content">
+      <div class="invoice-modal-actions">
+        <button class="btn btn-outline" id="invoice-close-btn">Close Preview</button>
+        <button class="btn btn-primary" id="invoice-trigger-print">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-4 11H9v-5h6v5zm4-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2-9H7v4h10V3z"/></svg>
+          <span>Print / Save as PDF</span>
+        </button>
+      </div>
+
+      <div class="invoice-header-row">
+        <div class="invoice-brand">
+          <img src="firebase-logo.svg" width="32" height="32" alt="Firebase Logo">
+          <span class="invoice-logo-title">Firebase Billing Statement</span>
+        </div>
+        <div class="invoice-meta">
+          <div><strong>Statement Date:</strong> August 12, 2026</div>
+          <div><strong>Billing Period:</strong> August 2026</div>
+          <div><strong>Invoice #:</strong> INV-202608-FBAF90</div>
+        </div>
+      </div>
+
+      <div class="invoice-billing-details">
+        <div>
+          <h4>Billed To</h4>
+          <div><strong>Project Name:</strong> usafi-barista-web</div>
+          <div><strong>Billing Account:</strong> Firebase Payment</div>
+          <div><strong>Account ID:</strong> 01AFA5-71AD90-715FEO</div>
+        </div>
+        <div>
+          <h4>Pricing Tier & Status</h4>
+          <div><strong>Plan:</strong> Blaze (Pay as you go)</div>
+          <div><strong>Currency:</strong> USD ($)</div>
+          <div><strong>Payment Status:</strong> Pending / Auto-Charge</div>
+        </div>
+      </div>
+
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Product & Service Item</th>
+            <th>Monthly Usage Volume</th>
+            <th>Included Free Tier</th>
+            <th>Billable Excess</th>
+            <th>Unit Price Rate</th>
+            <th style="text-align: right;">Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-table-body">
+          <!-- Dynamic Table Rows populated via JS -->
+        </tbody>
+      </table>
+
+      <div class="invoice-summary-box">
+        <div class="summary-line">
+          <span>Subtotal:</span>
+          <span id="invoice-subtotal">$0.01</span>
+        </div>
+        <div class="summary-line">
+          <span>Estimated Tax / Fees:</span>
+          <span>$0.00</span>
+        </div>
+        <div class="summary-line total">
+          <span>Total Amount Due:</span>
+          <span id="invoice-total">$0.01</span>
+        </div>
+      </div>
+
+      <!-- How to Pay Instructions -->
+      <div class="how-to-pay-box">
+        <h4>💳 How to Pay & Payment Details</h4>
+        <ol>
+          <li><strong>Automatic Credit Card / Bank Billing:</strong> If your account is linked to a Google Cloud Billing Profile, the total amount of <strong id="how-to-pay-amount">$0.01</strong> will be automatically charged to your default payment card on the 1st of next month.</li>
+          <li><strong>Manual Bank Transfer / Invoice Pay:</strong>
+            <ul style="margin-top: 4px; padding-left: 18px; list-style-type: circle;">
+              <li><strong>Payee:</strong> Google Cloud Platform / Firebase Billing Services</li>
+              <li><strong>Bank Wire Reference Code:</strong> <code>01AFA5-71AD90-715FEO-AUG2026</code></li>
+              <li><strong>Payment Link:</strong> Access console at <code>https://console.firebase.google.com/u/0/project/usafi-barista-web/usage/details</code></li>
+            </ul>
+          </li>
+          <li><strong>Support & Inquiries:</strong> For billing questions or quota adjustment requests, contact Firebase Billing Support via Google Cloud Console.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

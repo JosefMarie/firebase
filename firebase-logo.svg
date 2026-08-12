@@ -1,0 +1,17 @@
+<svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Modern Firebase Flame Logo (2024+) -->
+  <!-- Left Yellow Petal -->
+  <path d="M 33 41 C 21 40 14 53 14 68 C 14 82 27 94 43 94 C 54 94 62 89 68 83 C 48 78 33 60 33 41 Z" fill="#FFC107" />
+  
+  <!-- Center Orange Overlap Blend -->
+  <path d="M 33 41 C 33 55 42 70 56 80 C 60 76 64 71 67 65 C 57 58 48 48 44 37 C 38 38 34 39 33 41 Z" fill="#FF8F00" />
+
+  <!-- Main Right Red Petal -->
+  <path d="M 51 5 C 46 16 38 32 35 48 C 32 66 43 83 60 89 C 75 94 86 83 86 63 C 86 40 71 18 51 5 Z" fill="#D93025" opacity="0.95" />
+  
+  <!-- Smooth Curved Overlap Lobe -->
+  <path d="M 51 5 C 47 18 41 33 34 46 C 31 53 30 60 32 68 C 38 80 50 89 65 91 C 49 84 38 70 38 54 C 38 38 45 22 51 5 Z" fill="#E65100" />
+  <path d="M 33 41 C 18 42 14 55 14 68 C 14 83 28 95 44 95 C 58 95 67 87 69 82 C 55 83 41 74 36 60 C 32 49 33 44 33 41 Z" fill="#FFB300"/>
+  <path d="M 51 5 C 33 28 30 48 38 70 C 46 83 60 92 73 90 C 82 88 86 80 86 63 C 86 40 70 18 51 5 Z" fill="#D83000"/>
+  <path d="M 35 56 C 36 67 43 78 54 84 C 60 81 64 76 67 69 C 58 65 50 56 46 45 C 40 47 37 51 35 56 Z" fill="#F57C00"/>
+</svg>
